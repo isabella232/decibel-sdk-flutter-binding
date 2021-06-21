@@ -10,7 +10,7 @@ git_deploy:
       - "-c"
 
   script:
-    - git remote add github https://${USER_SDK}:${SECRET_SDK}@github.com/DecibelInsight/decibel-sdk-flutter-binding.git
+    - git remote add github https://${USER_SDK}:${SECRET_SDK}@github.com/DecibelInsight/decibel-sdk-flutter-binding.git || true
     - git checkout -b master
     - git push -u github master
   only:
