@@ -6,7 +6,8 @@ git_deploy:
   image:
     name: alpine/git
     entrypoint:
-      - sh
+      - "/bin/sh"
+      - "-c"
 
   script:
     - git remote add github https://${USER_SDK}:${SECRET_SDK}@github.com/DecibelInsight/decibel-sdk-flutter-binding.git
