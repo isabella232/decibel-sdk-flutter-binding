@@ -13,5 +13,8 @@ git_deploy:
     - git remote add github https://${USER_SDK}:${SECRET_SDK}@github.com/DecibelInsight/decibel-sdk-flutter-binding.git || true
     - git checkout -b master
     - git push -u github master
+    - VERSION=$(cat pubspec.yaml | grep "^version:" | awk '{print $2}')
+    - git tag ${VERSION}
+    - git push -u github --tags
   only:
     - MOB-539
