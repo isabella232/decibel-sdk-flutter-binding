@@ -3,7 +3,11 @@ stages:
 
 git_deploy:
   stage: deploy
-  image: alpine/git
+  image:
+    name: alpine/git
+    entrypoint:
+      - sh
+
   script:
     - git remote add github https://${USER_SDK}:${SECRET_SDK}@github.com/DecibelInsight/decibel-sdk-flutter-binding.git
     - git push github MOB-539
