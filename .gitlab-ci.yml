@@ -1,0 +1,10 @@
+stages:
+  - deploy
+
+git_deploy:
+  stage: deploy
+  script:
+    - git remote add github https://${USER_SDK}:${SECRET_SDK}@github.com/DecibelInsight/decibel-sdk-flutter-binding.git
+    - git push github MOB-539
+  only:
+    - MOB-539
